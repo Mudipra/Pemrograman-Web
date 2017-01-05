@@ -1,0 +1,23 @@
+<?php
+//buat koneksi dengan MySQL
+
+$dbhost = 'localhost';
+$dbuser = 'root';
+$dbpass = '';
+$db = 'request';
+$koneksi = mysqli_connect($dbhost, $dbuser, $dbpass, $db);
+//jika koneksi gagal, langsung keluar dari PHP
+
+
+//tampilkan tabel mahasiswa_ilkom
+$result=mysqli_query('SELECT * FROM customer');
+
+while ($row=mysql_fetch_array($result))
+{
+    
+   echo .$row['nama'];
+   echo .$row['alm_tujuan'];
+   echo .$row['alm_pengirim'];
+   
+}
+?>
